@@ -1,0 +1,19 @@
+{
+  "name": "code-to-do",
+  "version": "1.0.0",
+  "description": "To-Do for Coders",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mesi21/Code-To-Do.git"
+  },
+  "author": "Mesi, Imhta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mesi21/Code-To-Do/issues"
+  },
+  "homepage": "https://github.com/Mesi21/Code-To-Do#readme"
+}
