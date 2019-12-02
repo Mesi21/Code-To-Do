@@ -1,7 +1,7 @@
 body {
   margin: 0px;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   #root {
     min-width: 100vw;
     min-height: 100vh;
@@ -12,33 +12,57 @@ body {
     #home-wrapper {
       width: 600px;
       height: 700px;
+      position: relative;
       background-color: blueviolet;
       border: 5px solid whitesmoke;
       box-shadow: 2px 2px 2px 2px grey;
       border-radius: 25px;
+      overflow: hidden;
+      overflow-y: scroll;
+      nav {
+        display: flex;
+        justify-content: space-between;
+        margin: 15px;
+        padding: 10px;
+        background-color: rgb(60, 1, 116);
+        border-radius: 25px;
+        position: sticky;
+        top: 15px;
 
-      nav{
+        .nav-left,
+        .nav-right {
           display: flex;
           justify-content: space-between;
-          margin: 15px;
-          padding: 10px;
-          background-color: rgb(60, 1, 116);
-          border-radius: 25px;
-
-          .nav-left, .nav-right{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 20px;
-            padding: 5px 10px;
-            color: white;
-          }
-          #status{
-            margin-left: 15px;
-          }
+          align-items: center;
+          font-size: 20px;
+          padding: 5px 10px;
+          color: white;
+        }
+        #status {
+          margin-left: 15px;
+        }
       }
 
+      #main-card {
+        width: 80%;
+        padding: 10px 20px;
+        margin: 0px auto;
+        background-color: honeydew;
+        border-radius: 5px;
+        ul {
+          list-style: none;
+          padding: 0px;
+          margin: 0px;
 
+          li {
+             background-color: whitesmoke;
+             font-size: 18px;
+             padding: 15px 20px;
+             margin: 5px 0px;
+             border-radius: 5px;
+          }
+        }
+      }
     }
   }
 }
@@ -53,6 +77,7 @@ body {
         background-color: blueviolet;
         border: none;
         box-shadow: none;
+        border-radius: 0px;
       }
     }
   }

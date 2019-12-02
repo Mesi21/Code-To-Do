@@ -1,4 +1,5 @@
 import Navbar from '../components/navbar';
+import MainCard from '../components/main-card';
 
 /* eslint-disable arrow-body-style */
 const Home = (() => {
@@ -7,6 +8,7 @@ const Home = (() => {
     init() {
       homeElement.innerHTML = `
         ${Navbar}
+        ${MainCard}
       `;
     },
   };
