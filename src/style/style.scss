@@ -1,0 +1,34 @@
+body {
+  margin: 0px;
+
+  #root {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #home-wrapper {
+      width: 400px;
+      height: 700px;
+      background-color: blueviolet;
+      border: 5px solid whitesmoke;
+      box-shadow: 2px 2px 2px 2px grey;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    #root {
+      display: block;
+      #home-wrapper {
+        min-width: 100%;
+        min-height: 100%;
+        background-color: blueviolet;
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
