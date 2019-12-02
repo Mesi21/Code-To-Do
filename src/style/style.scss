@@ -31,6 +31,13 @@ body {
         top: 15px;
         z-index: 2;
 
+        &:hover {
+          position: absolute;
+          align-items: flex-start;
+          width: 530px;
+          height: 500px;
+          animation: grow 300ms linear;
+        }
         .nav-left,
         .nav-right {
           display: flex;
@@ -57,29 +64,29 @@ body {
           margin: 0px;
 
           li {
-             background-color: whitesmoke;
-             font-size: 18px;
-             padding: 15px 20px;
-             margin: 5px 0px;
-             border-radius: 5px;
+            background-color: whitesmoke;
+            font-size: 18px;
+            padding: 15px 20px;
+            margin: 5px 0px;
+            border-radius: 5px;
           }
         }
-        .btn-wrapper{
-            position: sticky;  
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            bottom: 20px; 
+        .btn-wrapper {
+          position: sticky;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          bottom: 20px;
         }
-        #add-todo-btn{
-            width: 60px;
-            height: 60px;
-            font-size: 20px;
-            color: white;
-            background-color: rgb(60, 1, 116);
-            border: none;
-            border-radius:100%;
-            z-index: 2;
+        #add-todo-btn {
+          width: 60px;
+          height: 60px;
+          font-size: 20px;
+          color: white;
+          background-color: rgb(60, 1, 116);
+          border: none;
+          border-radius: 100%;
+          z-index: 2;
         }
       }
     }
@@ -98,5 +105,14 @@ body {
         border-radius: 0px;
       }
     }
+  }
+}
+
+@keyframes grow {
+  from {
+    height: 60px;
+  }
+  to {
+    height: 500px;
   }
 }
