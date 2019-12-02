@@ -1,8 +1,13 @@
+import Navbar from '../components/navbar';
+
 /* eslint-disable arrow-body-style */
 const Home = (() => {
+  const homeElement = document.getElementById('home-wrapper');
   return {
     init() {
-      document.getElementById('root').innerHTML = 'Hello World';
+      homeElement.innerHTML = `
+        ${Navbar}
+      `;
     },
   };
 })();
