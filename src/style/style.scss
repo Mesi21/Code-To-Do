@@ -17,7 +17,7 @@ body {
       box-shadow: 2px 2px 2px 2px grey;
       border-radius: 25px;
 
-      navbar{
+      nav{
           display: flex;
           justify-content: space-between;
           margin: 15px;
@@ -37,6 +37,8 @@ body {
             margin-left: 15px;
           }
       }
+
+
     }
   }
 }

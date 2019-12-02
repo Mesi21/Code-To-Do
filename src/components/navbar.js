@@ -1,5 +1,5 @@
 const Navbar = (() => `
-    <navbar>
+    <nav>
         <div class="nav-left">
             <i class='material-icons'>
                 menu
@@ -9,7 +9,7 @@ const Navbar = (() => `
         <div class="nav-right">
             <p id='remaining-todos'>1/5<p>
         </div>
-    </navbar>    
+    </nav>    
 `)();
 
 export default Navbar;
