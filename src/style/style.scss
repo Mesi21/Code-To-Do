@@ -151,6 +151,10 @@ body {
           border: none;
           border-radius: 100%;
           z-index: 2;
+          &:hover{
+            cursor: pointer;
+            background-color: red;
+          }
         }
       }
     }
