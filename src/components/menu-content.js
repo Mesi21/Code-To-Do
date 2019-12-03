@@ -1,3 +1,5 @@
+import projectItem from './project-item';
+
 const MenuContent = (() => `
     <div id='menu-content'>
         <header id='todo-menu-header'>
@@ -16,10 +18,7 @@ const MenuContent = (() => `
                 </button>
             </header>
             <ul id='project-list'>
-                <li class='project-item'>Project 1</li>
-                <li class='project-item'>Project 2</li>
-                <li class='project-item'>Project 3</li>
-                <li class='project-item'>Project 4</li>
+                ${[...Array(4).keys()].map(i => projectItem(i)).join('')}
             </ul>
         </section>
     </div>
