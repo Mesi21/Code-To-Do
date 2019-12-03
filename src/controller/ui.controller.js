@@ -23,7 +23,7 @@ const UI = (() => {
     deleteProject(index) {
       state.current.projects.splice(index, 1);
       state.set('projects', state.current.projects);
-    }
+    },
   };
 })();
 export default UI;
