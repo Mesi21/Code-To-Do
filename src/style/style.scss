@@ -23,6 +23,7 @@ body {
       nav {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
         margin: 15px;
         padding: 10px;
         background-color: rgb(60, 1, 116);
@@ -30,13 +31,13 @@ body {
         position: sticky;
         top: 15px;
         z-index: 2;
+        animation: shrink 300ms ease-in-out;
 
         &:hover {
-          position: absolute;
           align-items: flex-start;
           width: 530px;
-          height: 500px;
-          animation: grow 300ms linear;
+          height: 650px;
+          animation: grow 300ms ease-in-out;
         }
         .nav-left,
         .nav-right {
@@ -114,5 +115,14 @@ body {
   }
   to {
     height: 500px;
+  }
+}
+
+@keyframes shrink {
+  from {
+    height: 500px;
+  }
+  to{
+    height: 60px;
   }
 }
