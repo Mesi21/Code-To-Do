@@ -32,12 +32,15 @@ body {
         top: 15px;
         z-index: 2;
         animation: shrink 300ms ease-in-out;
-
-        &:hover {
+        pointer-events: none;
+        &:hover{
           align-items: flex-start;
           width: 530px;
           height: 650px;
           animation: grow 300ms ease-in-out;
+        }
+        #burger-btn{
+          pointer-events: auto;
         }
         .nav-left,
         .nav-right {
