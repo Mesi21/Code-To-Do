@@ -7,4 +7,8 @@ export default class Project {
   addTodo(todo) {
     this.todos.push(todo);
   }
+
+  deleteTodo(index) {
+    this.todos.splice(index, 1);
+  }
 }
