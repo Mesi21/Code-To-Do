@@ -1,7 +1,7 @@
 import './style/style.scss';
-import Home from './controller/home.controller';
+import UI from './controller/ui.controller';
 
-Home.init();
+UI.init();
 
 const burgerBtn = document.getElementById('burger-btn');
 const menuWrapperElement = document.getElementById('menu-wrapper');
