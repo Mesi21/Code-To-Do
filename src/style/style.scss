@@ -23,32 +23,19 @@ body {
       #menu-wrapper {
         background-color: rgb(60, 1, 116);
         border-radius: 25px;
+        height: 80px;
         margin: 15px;
         padding: 10px;
         position: sticky;
         top: 15px;
         z-index: 2;
+        overflow: hidden;
         animation: shrink 300ms ease-in-out;
-
-        // &:hover {
-        //   align-items: flex-start;
-        //   width: 530px;
-        //   height: 650px;
-        //   overflow-y: auto;
-        //   background-color: rgb(60, 1, 116);
-        //   animation: grow 300ms ease-in-out;
-        // }
-        // &:hover > #menu-content {
-        //   display: block;
-        // }
         nav {
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
-          pointer-events: none;
-
           #burger-btn {
-            pointer-events: auto;
             cursor: pointer;
           }
           .nav-left,
@@ -64,11 +51,9 @@ body {
             margin-left: 15px;
           }
         }
-
         #menu-content {
-          display: none;
 
-          #todo-menu-header{
+          #todo-menu-header {
             display: flex;
             width: fit-content;
             border: 2px solid white;
@@ -77,22 +62,22 @@ body {
             font-size: 20px;
             font-weight: bold;
             margin: 20px auto;
-            div{
+            div {
               padding: 15px 30px;
             }
-            .is-selected{
+            .is-selected {
               background-color: blueviolet;
             }
           }
-          #projects-section{
-            header{
+          #projects-section {
+            header {
               display: flex;
               justify-content: space-between;
               align-items: center;
               color: white;
               padding: 10px 20px;
 
-              #project-add-btn{
+              #project-add-btn {
                 width: 30px;
                 height: 30px;
                 display: flex;
@@ -103,31 +88,34 @@ body {
                 background-color: transparent;
                 color: white;
 
-                &:hover{
+                &:hover {
                   background-color: white;
                   color: rgb(60, 1, 116);
                   cursor: pointer;
                 }
               }
             }
-            #project-list{
-                list-style: none;
-                padding: 0px;
-                margin: 0px;
-      
-                li {
-                  color: white;
-                  border: 2px solid white;
-                  font-size: 18px;
-                  padding: 15px 20px;
-                  margin: 5px 0px;
-                  border-radius: 5px;
-                }
+            #project-list {
+              list-style: none;
+              padding: 0px;
+              margin: 0px;
+
+              li {
+                color: white;
+                border: 2px solid white;
+                font-size: 18px;
+                padding: 15px 20px;
+                margin: 5px 0px;
+                border-radius: 5px;
+              }
             }
           }
         }
       }
-
+      .is-menu-expanded{
+        height: auto !important;
+        animation: grow 300ms ease-in-out !important;
+      }
       #main-card {
         width: 80%;
         padding: 10px 20px;
@@ -167,6 +155,8 @@ body {
       }
     }
   }
+
+
 }
 
 @media screen and (max-width: 600px) {

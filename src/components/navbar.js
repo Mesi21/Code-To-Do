@@ -2,7 +2,7 @@ import MenuContent from './menu-content';
 
 const Navbar = (() => `
     <div id='menu-wrapper'>
-        <nav>
+        <nav id='navbar'>
             <div class='nav-left'>
                 <a id='burger-btn'>
                     <i class='material-icons'>
