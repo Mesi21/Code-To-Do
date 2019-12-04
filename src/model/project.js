@@ -3,12 +3,4 @@ export default class Project {
     this.title = title;
     this.todos = todos;
   }
-
-  addTodo(todo) {
-    this.todos.push(todo);
-  }
-
-  deleteTodo(index) {
-    this.todos.splice(index, 1);
-  }
 }

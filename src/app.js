@@ -1,8 +1,6 @@
 import './style/style.scss';
 import UI from './controller/ui.controller';
-import Project from './model/project';
-import state from './state';
-import Todo from './model/todo';
+import Projects from './controller/projects.controller';
 
 UI.init();
 
@@ -23,12 +21,11 @@ burgerBtn.addEventListener('click', event => {
 });
 
 projectAddBtn.addEventListener('click', event => {
-  UI.addProject(new Project('title'));
+  Projects.addProject('title');
   event.preventDefault();
 });
 
 todoAddBtn.addEventListener('click', event => {
-  state.current.projects[0].todos.push(new Todo('First Todo'));
-  state.set('projects', state.current.projects);
+  Projects.selectProject(0).addTodo('want to buy milk');
   event.preventDefault();
 });
