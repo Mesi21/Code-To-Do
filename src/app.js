@@ -11,6 +11,8 @@ const burgerBtn = document.getElementById('burger-btn');
 const menuWrapperElement = document.getElementById('menu-wrapper');
 const projectAddBtn = document.getElementById('project-add-btn');
 const todoAddBtn = document.getElementById('add-todo-btn');
+const todoList = document.getElementById('todo-list');
+const projectsList = document.getElementById('project-list');
 
 burgerBtn.addEventListener('click', event => {
   const isExpanded = 'is-menu-expanded';
@@ -30,7 +32,20 @@ projectAddBtn.addEventListener('click', event => {
 });
 
 todoAddBtn.addEventListener('click', event => {
-  Projects.selectProject(0).addTodo('want to buy milk');
+  Projects.selectProject(state.get('selectedProject'))
+    .addTodo('want to buy milk');
   UI.refresh.todos();
+  UI.refresh.navTodoRemaining();
   event.preventDefault();
+});
+
+projectsList.addEventListener('click', ({ target }) => {
+  const currentState = Number(target.id.split('-')[1]);
+  Projects.selectProject(currentState);
+  UI.refresh.all();
+});
+
+todoList.addEventListener('click', ({ target }) => {
+  const currentState = Number(target.id.split('-')[1]);
+  console.log(currentState);
 });
