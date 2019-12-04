@@ -7,7 +7,7 @@ const MainCard = () => `
             ${state
     .get('projects')[state.get('selectedProject')]
     .todos
-    .map(i => todoItem(i.title))
+    .map((todo, index) => todoItem(todo.title, index))
     .join('')}
         </ul>
         <div class="btn-wrapper">
