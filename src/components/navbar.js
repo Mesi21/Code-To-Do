@@ -1,4 +1,5 @@
 import MenuContent from './menu-content';
+import state from '../state';
 
 const Navbar = () => `
     <div id='menu-wrapper'>
@@ -9,10 +10,16 @@ const Navbar = () => `
                         menu
                     </i>
                 </a>
-                <h3 id='status'>today<h3>
+                <h3 id='nav-status'>
+                    ${state.get('projects')[state.get('selectedProject')].title}
+                <h3>
             </div>
             <div class='nav-right'>
-                <p id='remaining-todos'>1/5<p>
+                <p id='remaining-todos'>
+                    0
+                    /
+                    ${state.get('projects')[state.get('selectedProject')].todos.length}
+                <p>
             </div>
         </nav>    
     ${MenuContent()}

@@ -30,6 +30,18 @@ const UI = (() => {
           .map(i => todoItem(i.title))
           .join('');
       },
+      navStatus() {
+        const navStatus = document.getElementById('nav-status');
+        navStatus.innerHTML = state
+          .get('projects')[state.get('selectedProject')]
+          .title;
+      },
+      navTodoRemaining() {
+        const remainingTodos = document.getElementById('remaining-todos');
+        remainingTodos.innerHTML = `0 / ${
+          state.get('projects')[state.get('selectedProject')].length}
+          `;
+      },
       all() {
         navbarElement.innerHTML = Navbar();
         mainCardElement.innerHTML = MainCard();
