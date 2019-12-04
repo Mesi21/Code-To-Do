@@ -1,9 +1,14 @@
 import todoItem from './todo-item';
+import state from '../state';
 
-const MainCard = (() => `
+const MainCard = () => `
     <div id='main-card'>
         <ul id='todo-list'>
-            ${[...Array(11).keys()].map(i => todoItem(i)).join('')}
+            ${state
+    .get('projects')[state.get('selectedProject')]
+    .todos
+    .map(i => todoItem(i.title))
+    .join('')}
         </ul>
         <div class="btn-wrapper">
             <button id='add-todo-btn'>
@@ -13,6 +18,6 @@ const MainCard = (() => `
             </button>
         </div>
     </div>
-`)();
+`;
 
 export default MainCard;

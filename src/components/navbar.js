@@ -1,6 +1,6 @@
 import MenuContent from './menu-content';
 
-const Navbar = (() => `
+const Navbar = () => `
     <div id='menu-wrapper'>
         <nav id='navbar'>
             <div class='nav-left'>
@@ -15,8 +15,8 @@ const Navbar = (() => `
                 <p id='remaining-todos'>1/5<p>
             </div>
         </nav>    
-    ${MenuContent}
+    ${MenuContent()}
     </div>
-`)();
+`;
 
 export default Navbar;
