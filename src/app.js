@@ -25,10 +25,12 @@ burgerBtn.addEventListener('click', event => {
 
 projectAddBtn.addEventListener('click', event => {
   Projects.addProject('title');
+  UI.refresh.projects();
   event.preventDefault();
 });
 
 todoAddBtn.addEventListener('click', event => {
   Projects.selectProject(0).addTodo('want to buy milk');
+  UI.refresh.todos();
   event.preventDefault();
 });

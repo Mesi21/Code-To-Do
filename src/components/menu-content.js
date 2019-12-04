@@ -1,7 +1,7 @@
 import projectItem from './project-item';
 import state from '../state';
 
-const MenuContent = (() => `
+const MenuContent = () => `
     <div id='menu-content'>
         <header id='todo-menu-header'>
             <div name='past'>Past</div>
@@ -23,6 +23,6 @@ const MenuContent = (() => `
             </ul>
         </section>
     </div>
-`)();
+`;
 
 export default MenuContent;
