@@ -1,7 +1,10 @@
 import './style/style.scss';
 import UI from './controller/ui.controller';
 import Projects from './controller/projects.controller';
+import state from './state';
 
+state.init();
+Projects.init();
 UI.init();
 
 const burgerBtn = document.getElementById('burger-btn');

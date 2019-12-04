@@ -4,7 +4,6 @@ import Project from '../model/project';
 
 const Projects = (() => ({
   init() {
-    state.init();
     if (!state.current.projects) {
       state.set('projects', []);
     }

@@ -1,5 +1,5 @@
 const projectItem = (data) => `
-    <li class='project-item'> Project ${data}</li>
+    <li class='project-item'>${data}</li>
 `;
 
 export default projectItem;

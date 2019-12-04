@@ -1,4 +1,5 @@
 import projectItem from './project-item';
+import state from '../state';
 
 const MenuContent = (() => `
     <div id='menu-content'>
@@ -18,7 +19,7 @@ const MenuContent = (() => `
                 </button>
             </header>
             <ul id='project-list'>
-                ${[...Array(4).keys()].map(i => projectItem(i)).join('')}
+            ${state.get('projects').map(project => projectItem(project.title)).join('')}
             </ul>
         </section>
     </div>
