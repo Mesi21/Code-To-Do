@@ -7,7 +7,12 @@ const Projects = (() => ({
     if (!state.current.projects) {
       state.set('projects', []);
       state.set('selectedProject', 0);
+      this.firstProject();
     }
+  },
+  firstProject() {
+    this.addProject('First Project');
+    this.selectProject(0).addTodo('First todo');
   },
   refreshProjects() {
     state.set('projects', state.current.projects);
@@ -25,8 +30,9 @@ const Projects = (() => ({
         project.todos.splice(todoIndex, 1);
         that.refreshProjects();
       },
-      markTodoCompleted(todoIndex) {
-        project.todos[todoIndex].isCompleted = true;
+      toggleTodoCompleted(todoIndex) {
+        const currentState = project.todos[todoIndex].isCompleted;
+        project.todos[todoIndex].isCompleted = !currentState;
         that.refreshProjects();
       },
       delete() {

@@ -46,6 +46,8 @@ projectsList.addEventListener('click', ({ target }) => {
 });
 
 todoList.addEventListener('click', ({ target }) => {
-  const currentState = Number(target.id.split('-')[1]);
-  console.log(currentState);
+  const todoIndex = Number(target.id.split('-')[1]);
+  Projects.selectProject(state.get('selectedProject'))
+    .toggleTodoCompleted(todoIndex);
+  UI.refresh.todos();
 });

@@ -26,7 +26,7 @@ const UI = (() => {
         todoList.innerHTML = state
           .get('projects')[state.get('selectedProject')]
           .todos
-          .map((todo, index) => todoItem(todo.title, index))
+          .map((todo, index) => todoItem(todo, index))
           .join('');
       },
       navStatus() {
