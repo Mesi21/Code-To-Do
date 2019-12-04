@@ -113,6 +113,8 @@ body {
         }
       }
       .is-menu-expanded{
+        min-height: 650px;
+        padding-bottom: 30px !important;
         height: auto !important;
         animation: grow 300ms ease-in-out !important;
       }
@@ -153,7 +155,10 @@ body {
           z-index: 2;
           &:hover{
             cursor: pointer;
-            background-color: red;
+          }
+          &:active{
+            border: 2px solid;
+            box-shadow: 0px 0px 40px 7px darkslateblue;
           }
         }
       }
