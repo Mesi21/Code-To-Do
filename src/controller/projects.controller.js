@@ -25,6 +25,10 @@ const Projects = (() => ({
         project.todos.splice(todoIndex, 1);
         that.refreshProjects();
       },
+      markTodoCompleted(todoIndex) {
+        project.todos[todoIndex].isCompleted = true;
+        that.refreshProjects();
+      },
       delete() {
         state.current.projects.splice(projectIndex, 1);
         that.refreshProjects();

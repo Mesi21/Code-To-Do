@@ -138,8 +138,18 @@ body {
             font-size: 18px;
             padding: 15px 20px;
             margin: 5px 0px;
+            border: 2px solid transparent;
             border-radius: 5px;
             cursor: pointer;
+          }
+          li:hover,
+          .is-completed {
+            border-color: blueviolet;
+            border-radius: 5px;
+            text-decoration: line-through;           
+          }
+          .is-completed{
+            border-color: transparent;
           }
         }
         .btn-wrapper {
