@@ -6,12 +6,14 @@ const Projects = (() => ({
   init() {
     if (!state.current.projects) {
       state.set('projects', []);
+      state.set('selectedProject', 0);
     }
   },
   refreshProjects() {
     state.set('projects', state.current.projects);
   },
   selectProject(projectIndex) {
+    state.set('selectedProject', projectIndex);
     const that = this;
     const project = state.current.projects[projectIndex];
     return {

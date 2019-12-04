@@ -10,7 +10,6 @@ const UI = (() => {
 
   return {
     init() {
-      state.set('selectedProject', 0);
       navbarElement.innerHTML = Navbar();
       mainCardElement.innerHTML = MainCard();
     },
@@ -19,7 +18,7 @@ const UI = (() => {
         const projectsList = document.getElementById('project-list');
         projectsList.innerHTML = state
           .get('projects')
-          .map(project => projectItem(project.title))
+          .map((project, index) => projectItem(project.title, index))
           .join('');
       },
       todos() {
@@ -27,7 +26,7 @@ const UI = (() => {
         todoList.innerHTML = state
           .get('projects')[state.get('selectedProject')]
           .todos
-          .map(i => todoItem(i.title))
+          .map((todo, index) => todoItem(todo.title, index))
           .join('');
       },
       navStatus() {
@@ -38,14 +37,19 @@ const UI = (() => {
       },
       navTodoRemaining() {
         const remainingTodos = document.getElementById('remaining-todos');
-        remainingTodos.innerHTML = `0 / ${
-          state.get('projects')[state.get('selectedProject')].length}
+        remainingTodos.innerHTML = `0 / 
+        ${state.get('projects')[state.get('selectedProject')].todos.length}
           `;
       },
       all() {
-        navbarElement.innerHTML = Navbar();
-        mainCardElement.innerHTML = MainCard();
+        this.projects();
+        this.todos();
+        this.navStatus();
+        this.navTodoRemaining();
       },
+    },
+    set: {
+
     },
   };
 })();

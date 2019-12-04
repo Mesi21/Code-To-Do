@@ -19,7 +19,7 @@ const MenuContent = () => `
                 </button>
             </header>
             <ul id='project-list'>
-            ${state.get('projects').map(project => projectItem(project.title)).join('')}
+            ${state.get('projects').map((project, index) => projectItem(project.title, index)).join('')}
             </ul>
         </section>
     </div>
