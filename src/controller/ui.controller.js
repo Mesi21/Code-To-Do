@@ -24,18 +24,17 @@ const UI = (() => {
       todos() {
         const todoList = document.getElementById('todo-list');
         todoList.innerHTML = state
-          .get('projects')[state.get('selectedProject')]
-          .todos
-          .map((todo, index) => todoItem(todo, index))
+          .get('projects')
+          [state.get('selectedProject')].todos.map((todo, index) => todoItem(todo, index),)
           .join('');
       },
       navStatus() {
         const navStatus = document.getElementById('nav-status');
-        navStatus.innerHTML = state
-          .get('projects')[state.get('selectedProject')]
-          .title;
+        navStatus.innerHTML = state.get('projects')[
+          state.get('selectedProject')
+        ].title;
       },
-      navTodoRemaining() {
+      navTodosRemaining() {
         const remainingTodos = document.getElementById('remaining-todos');
         remainingTodos.innerHTML = `0 / 
         ${state.get('projects')[state.get('selectedProject')].todos.length}
@@ -45,12 +44,10 @@ const UI = (() => {
         this.projects();
         this.todos();
         this.navStatus();
-        this.navTodoRemaining();
+        this.navTodosRemaining();
       },
     },
-    set: {
-
-    },
+    set: {},
   };
 })();
 export default UI;
