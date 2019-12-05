@@ -22,6 +22,7 @@ body {
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
+          padding: 5px 10px;
           #burger-btn {
             cursor: pointer;
           }
@@ -31,10 +32,9 @@ body {
             justify-content: space-between;
             align-items: center;
             font-size: 20px;
-            padding: 5px 10px;
             color: white;
           }
-          #nav-status {
+          .brand-logo, #nav-status {
             margin-left: 15px;
           }
         }
