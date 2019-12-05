@@ -3,28 +3,15 @@ body {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   #root {
-    min-width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    background-color: blueviolet;
     #home-wrapper {
-      max-width: 600px;
-      max-height: 700px;
-      width: 100%;
-      position: relative;
-      background-color: blueviolet;
-      border: 5px solid whitesmoke;
-      box-shadow: 2px 2px 2px 2px grey;
-      border-radius: 25px;
-      overflow: hidden;
-      overflow-y: scroll;
+      #nb{
+        padding: 15px;
+      }
       #menu-wrapper {
         background-color: rgb(60, 1, 116);
         border-radius: 25px;
         height: 80px;
-        margin: 15px;
         padding: 10px;
         position: sticky;
         top: 15px;
