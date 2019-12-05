@@ -1,25 +1,27 @@
+/* eslint-disable indent */
 import projectItem from './project-item';
 import state from '../state';
 
 const MenuContent = () => `
     <div id='menu-content'>
         <header id='todo-menu-header'>
-            <div name='past'>Past</div>
-            <div name='today' class='is-selected'>Today</div>
-            <div name='future'>Future</div>
+            <input type='text' placeholder='Project name' id='project-name-input'>
+            <button id='project-add-btn'>
+            <i class='material-icons'>
+                add
+            </i>
+        </button>
         </header>
         <hr>
         <section id='projects-section'>
             <header>
                 <h3>Projects</h3>
-                <button id='project-add-btn'>
-                    <i class='material-icons'>
-                        add
-                    </i>
-                </button>
             </header>
             <ul id='project-list'>
-            ${state.get('projects').map((project, index) => projectItem(project.title, index)).join('')}
+            ${state
+                .get('projects')
+                .map((project, index) => projectItem(project.title, index))
+                .join('')}
             </ul>
         </section>
     </div>
