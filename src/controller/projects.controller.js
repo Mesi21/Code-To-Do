@@ -12,7 +12,8 @@ const Projects = (() => ({
   },
   firstProject() {
     this.addProject('First Project');
-    this.selectProject(0).addTodo('First todo');
+    this.selectProject(0)
+      .addTodo(['First todo', 'first decription', new Date(2020, 1, 11)]);
   },
   refreshProjects() {
     state.set('projects', state.current.projects);
@@ -22,8 +23,8 @@ const Projects = (() => ({
     const that = this;
     const project = state.current.projects[projectIndex];
     return {
-      addTodo(todo) {
-        project.todos.push(new Todo(todo));
+      addTodo([todo, decription, deadlineDate]) {
+        project.todos.push(new Todo(todo, decription, deadlineDate));
         that.refreshProjects();
       },
       deleteTodo(todoIndex) {

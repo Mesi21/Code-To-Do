@@ -2,7 +2,7 @@ const todoItem = (data, index) => `
     <li id='todo-${index}' class='todo-items'>
         <div id='check-todo'>
             <input type='checkbox' ${data.isCompleted ? 'checked' : ''} id='checkbox-${index}'/>
-            <p id='title-${index}'>${data.title}</p>
+            <p id='title-${index}'>${data.title} <br> ${data.description}</p>
         </div>
         <div id='btn-group'>
             <button class='flag-btn' id='flag-todo-btn-${index}'>
