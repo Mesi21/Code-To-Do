@@ -35,7 +35,6 @@ todoAddBtn.addEventListener('click', event => {
   Projects.selectProject(state.get('selectedProject'))
     .addTodo('want to buy milk');
   UI.refresh.todos();
-  UI.refresh.navTodosRemaining();
   event.preventDefault();
 });
 

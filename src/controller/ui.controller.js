@@ -34,17 +34,10 @@ const UI = (() => {
           state.get('selectedProject')
         ].title;
       },
-      navTodosRemaining() {
-        const remainingTodos = document.getElementById('remaining-todos');
-        remainingTodos.innerHTML = `0 / 
-        ${state.get('projects')[state.get('selectedProject')].todos.length}
-          `;
-      },
       all() {
         this.projects();
         this.todos();
         this.navStatus();
-        this.navTodosRemaining();
       },
     },
     set: {},
