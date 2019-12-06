@@ -9,10 +9,14 @@ const MenuContent = () => `
                 <h3>Projects</h3>
             </header>
             <ul id='project-list'>
-            ${state
-                .get('projects')
-                .map((project, index) => projectItem(project.title, index))
-                .join('')}
+            ${
+              state.get('projects').length
+                ? state
+                    .get('projects')
+                    .map((project, index) => projectItem(project.title, index))
+                    .join('')
+                : ''
+            }
             </ul>
         </section>
         <div id='todo-menu-header'>

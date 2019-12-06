@@ -11,6 +11,7 @@ const burgerBtn = document.getElementById('burger-btn');
 const menuWrapperElement = document.getElementById('menu-wrapper');
 const projectAddBtn = document.getElementById('project-add-btn');
 const todoAddBtn = document.getElementById('add-todo-btn');
+const projectRemoveBtn = document.getElementById('remove-project-btn');
 const todoList = document.getElementById('todo-list');
 const projectsList = document.getElementById('project-list');
 const projectInput = document.getElementById('project-name-input');
@@ -33,6 +34,12 @@ projectAddBtn.addEventListener('click', event => {
     projectInput.value = '';
     event.preventDefault();
   }
+});
+
+projectRemoveBtn.addEventListener('click', event => {
+  Projects.selectProject(Number(event.target.name)).delete();
+  UI.refresh.all();
+  event.preventDefault();
 });
 
 todoAddBtn.addEventListener('click', event => {
