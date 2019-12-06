@@ -4,15 +4,6 @@ import state from '../state';
 
 const MenuContent = () => `
     <div id='menu-content'>
-        <header id='todo-menu-header'>
-            <input type='text' placeholder='Project name' id='project-name-input'>
-            <button id='project-add-btn'>
-            <i class='material-icons'>
-                add
-            </i>
-        </button>
-        </header>
-        <hr>
         <section id='projects-section'>
             <header>
                 <h3>Projects</h3>
@@ -24,6 +15,15 @@ const MenuContent = () => `
                 .join('')}
             </ul>
         </section>
+        <div id='todo-menu-header'>
+        <input type='text' placeholder='Project name' id='project-name-input'>
+            <button id='project-add-btn'>
+                <i class='material-icons'>
+                    add
+                </i>
+            </button>
+        </div>
+ 
     </div>
 `;
 
