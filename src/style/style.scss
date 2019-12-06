@@ -3,28 +3,32 @@ body {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   #root {
+    min-height: 100vh;
     background-color: blueviolet;
     #home-wrapper {
-      #nb{
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      #nb {
+        padding: 15px;
+      }
+      #mc {
         padding: 15px;
       }
       #menu-wrapper {
         background-color: rgb(60, 1, 116);
-        border-radius: 25px;
-        height: 80px;
+        border-radius: 5px;
         padding: 10px;
         position: sticky;
         top: 15px;
         z-index: 2;
         overflow: hidden;
-        animation: shrink 300ms ease-in-out;
         nav {
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
           padding: 5px 10px;
           #burger-btn {
-            cursor: pointer;
+            display: none;
           }
           .nav-left,
           .nav-right {
@@ -34,41 +38,15 @@ body {
             font-size: 20px;
             color: white;
           }
-          .brand-logo, #nav-status {
+          .brand-logo,
+          #nav-status {
             margin-left: 15px;
+          }
+          .brand-logo span {
+            animation: blink 1s infinite;
           }
         }
         #menu-content {
-          #todo-menu-header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0px;
-            input {
-              border: 2px solid white;
-              border-radius: 25px;
-              font-size: 20px;
-              font-weight: bold;
-              padding: 15px 30px;
-            }
-            #project-add-btn {
-              width: 50px;
-              height: 50px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              border: 2px solid white;
-              border-radius: 50%;
-              background-color: rgb(60, 1, 116);
-              color: white;
-              margin-left: 15px;
-              &:hover {
-                background-color: white;
-                color: rgb(60, 1, 116);
-                cursor: pointer;
-              }
-            }
-          }
           #projects-section {
             header {
               display: flex;
@@ -81,8 +59,6 @@ body {
               list-style: none;
               padding: 0px;
               margin: 0px;
-              min-height: 200px;
-
               li {
                 color: white;
                 font-size: 18px;
@@ -98,82 +74,166 @@ body {
               }
             }
           }
+          #todo-menu-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 10px;
+            input {
+              border: none;
+              border-radius: 5px;
+              font-size: 15px;
+              font-weight: bold;
+              padding: 10px;
+              color: white;
+              width: 100%;
+              background-color: rgb(22, 0, 43);
+            }
+            #project-add-btn {
+              width: 30px;
+              height: 30px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border: 2px solid white;
+              border-radius: 50%;
+              background-color: rgb(60, 1, 116);
+              color: white;
+              margin-left: 15px;
+              &:hover {
+                background-color: white;
+                color: rgb(60, 1, 116);
+                cursor: pointer;
+              }
+            }
+          }
         }
       }
       .is-menu-expanded {
         padding-bottom: 30px !important;
-        height: auto !important;
+        min-height: 100vh !important;
         animation: grow 300ms ease-in-out !important;
       }
       #main-card {
-        width: 80%;
-        padding: 10px 20px;
+        padding: 5px 20px;
         margin: 0px auto;
         background-color: white;
         border-radius: 5px;
-
-        #input-wrapper{
+        header{
           display: flex;
-          justify-content: center;
+          justify-content: space-between;
           align-items: center;
-          padding: 20px 0px;
-          border-bottom: 2px solid rgb(60, 1, 116);
-          input {
-            border: 2px solid white;
-            border-radius: 25px;
-            font-size: 20px;
-            font-weight: bold;
-            padding: 15px 30px;
-            color: white;
-            background-color: rgb(60, 1, 116);
-          }
-          input::placeholder{
-            color: rgb(202, 202, 202);
-          }
-          #add-todo-btn {
-            width: 50px;
-            height: 50px;
+          button{
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
             align-items: center;
-            font-size: 20px;
-            color: white;
-            background-color: rgb(60, 1, 116);
+            border-radius: 5px;
             border: none;
-            border-radius: 100%;
-            z-index: 2;
-            &:hover {
-              cursor: pointer;
-            }
-            &:active {
-              border: 2px solid;
-              box-shadow: 0px 0px 40px 7px darkslateblue;
-            }
+            font-size: 15px;
+            font-weight: bold;
+            padding: 10px 20px;
+            margin: 0px 5px;
+            color: white;
+            background-color: red;
           }
         }
-
         ul {
           list-style: none;
           padding: 0px;
           margin: 0px;
-          min-height: 400px;
           li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             background-color: whitesmoke;
-            font-size: 18px;
             padding: 15px 20px;
             margin: 5px 0px;
-            border: 2px solid transparent;
             border-radius: 5px;
             cursor: pointer;
+            user-select: none;
+            #check-todo{
+              display: flex;
+              align-items: center;
+              p {
+                font-size: 18px;
+                margin: 0px 15px;
+              }
+              input {
+                cursor: pointer;
+                height: 25px;
+                width: 25px;
+                background-color: #ccc;
+                &:checked ~ p {
+                  text-decoration: line-through;
+                }
+              }
+            }
+            #btn-group{
+              display: flex;
+              button{
+                width: 35px;
+                height: 35px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 100%;
+                border: 2px solid;
+                margin: 0px 5px;
+                background-color: transparent;
+                cursor: pointer;
+              }
+              .remove-btn{
+                color: red;
+              }
+              .edit-btn{
+                color: rgb(60, 1, 116);
+              }
+            }
           }
-          li:hover,
-          .is-completed {
-            border-color: blueviolet;
+        }
+        #input-wrapper {
+          width: 100%;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          flex-wrap: wrap;
+          padding: 20px 10px;
+          input {
+            flex-grow: 1;
+            border: 2px solid white;
             border-radius: 5px;
-            text-decoration: line-through;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 10px;
+            color: white;
+            background-color: rgb(60, 1, 116);
+            &::placeholder {
+              color: rgb(202, 202, 202);
+            }
+            &[type="date"] {
+              padding: 7px 10px;
+            }
           }
-          .is-completed {
-            border-color: transparent;
+
+          #add-todo-btn, #cancel-todo-btn {
+            flex-grow: .5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            font-weight: bold;
+            margin: 0px 2.5px;
+            padding: 10px 20px;
+            color: white;
+            background-color: rgb(60, 1, 116);
+            border: none;
+            border-radius: 5px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          #cancel-todo-btn{
+            background-color: red;
           }
         }
       }
@@ -181,33 +241,53 @@ body {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   body {
     #root {
-      display: block;
       #home-wrapper {
-        height: 100vh;
-        background-color: blueviolet;
-        border: none;
-        box-shadow: none;
-        border-radius: 0px;
+        display: grid;
+        grid-template-columns: 1fr;
+        #nb {
+          padding: 15px;
+        }
+        #mc {
+          padding: 0px;
+        }
+        #menu-wrapper {
+          height: 80px;
+          animation: shrink 300ms ease-in-out;
+          nav {
+            #burger-btn {
+              display: block;
+              cursor: pointer;
+            }
+          }
+        }
       }
     }
+  }
+}
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
 @keyframes grow {
   from {
-    height: 80px;
+    min-height: 80px;
   }
   to {
-    height: 350px;
+    min-height: 100vh;
   }
 }
 
 @keyframes shrink {
   from {
-    height: 500px;
+    height: 100vh;
   }
   to {
     height: 60px;
