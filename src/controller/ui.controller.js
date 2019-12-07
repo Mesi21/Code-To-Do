@@ -40,7 +40,6 @@ const UI = (() => {
         this.navStatus();
       },
     },
-    set: {},
   };
 })();
 export default UI;
