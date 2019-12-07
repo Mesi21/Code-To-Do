@@ -46,6 +46,12 @@ const Projects = (() => ({
     state.current.projects.push(new Project(project));
     this.refreshProjects();
   },
+  length() {
+    return state.get('projects').length;
+  },
+  isThereAnyProject() {
+    return this.length() > 0;
+  },
 }))();
 
 export default Projects;

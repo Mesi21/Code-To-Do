@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import './style/style.scss';
 import UI from './controller/ui.controller';
 import Projects from './controller/projects.controller';
@@ -30,15 +31,21 @@ burgerBtn.addEventListener('click', event => {
 projectAddBtn.addEventListener('click', event => {
   if (/^\S/.test(projectInput.value)) {
     Projects.addProject(projectInput.value);
-    UI.refresh.projects();
     projectInput.value = '';
-    event.preventDefault();
+    if (Projects.length() === 1) {
+      location.reload();
+    } else {
+      UI.refresh.all();
+    }
   }
+  event.preventDefault();
 });
 
 projectRemoveBtn.addEventListener('click', event => {
   Projects.selectProject(Number(event.target.name)).delete();
-  UI.refresh.all();
+  if (!Projects.isThereAnyProject()) {
+    location.reload();
+  }
   event.preventDefault();
 });
 
@@ -58,8 +65,8 @@ projectsList.addEventListener('click', ({ target }) => {
 
 todoList.addEventListener('click', ({ target }) => {
   const todoIndex = Number(target.id.split('-')[1]);
-  Projects.selectProject(state.get('selectedProject')).toggleTodoCompleted(
-    todoIndex,
-  );
+  Projects
+    .selectProject(state.get('selectedProject'))
+    .toggleTodoCompleted(todoIndex);
   UI.refresh.todos();
 });
