@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { formatDistanceStrict } from 'date-fns';
 
 const todoItem = (data, index) => `

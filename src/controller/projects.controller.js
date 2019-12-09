@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { format } from 'date-fns';
 import state from '../state';
 import Todo from '../model/todo';
