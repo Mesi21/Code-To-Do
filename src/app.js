@@ -13,6 +13,7 @@ const menuWrapperElement = document.getElementById('menu-wrapper');
 const projectAddBtn = document.getElementById('project-add-btn');
 const todoAddBtn = document.getElementById('add-todo-btn');
 const projectRemoveBtn = document.getElementById('remove-project-btn');
+const resetTodoBtn = document.getElementById('cancel-todo-btn');
 const todoList = document.getElementById('todo-list');
 const projectsList = document.getElementById('project-list');
 const projectInput = document.getElementById('project-name-input');
@@ -52,24 +53,66 @@ projectRemoveBtn.addEventListener('click', event => {
 
 todoAddBtn.addEventListener('click', event => {
   const currentData = new FormData(todoFormElement);
-  Projects.selectProject(state.get('selectedProject')).addTodo([
-    ...currentData.values(),
-  ]);
+  const [type, index] = event.target.name.split('-');
+  switch (type) {
+    case 'todo':
+      Projects.selectProject(state.get('selectedProject')).addTodo([
+        ...currentData.values(),
+      ]);
+      break;
+    case 'edit':
+      Projects.selectProject(state.get('selectedProject')).updateTodo([
+        ...currentData.values(),
+      ], Number(index));
+      break;
+    default:
+      break;
+  }
+  todoAddBtn.name = 'todo';
   todoFormElement.reset();
   UI.refresh.todos();
   event.preventDefault();
 });
-
+resetTodoBtn.addEventListener('click', () => {
+  todoAddBtn.name = 'todo';
+  UI.refresh.all();
+});
 projectsList.addEventListener('click', ({ target }) => {
   const currentState = Number(target.id.split('-')[1]);
   Projects.selectProject(currentState);
   UI.refresh.all();
 });
 
-todoList.addEventListener('click', ({ target }) => {
-  const todoIndex = Number(target.id.split('-')[1]);
-  Projects.selectProject(state.get('selectedProject')).toggleTodoCompleted(
-    todoIndex,
-  );
-  UI.refresh.todos();
-});
+todoList.addEventListener(
+  'click',
+  ({ target }) => {
+    const actionType = target.id.split('-')[0];
+    const todoIndex = Number(target.id.split('-').splice(-1));
+    switch (actionType) {
+      case 'flag':
+        Projects.selectProject(state.get('selectedProject')).toggleTodoPriority(
+          todoIndex,
+        );
+        break;
+      case 'edit': {
+        const todo = Projects
+          .selectProject(state.get('selectedProject'))
+          .getTodo(todoIndex);
+        UI.editInit(todo, todoIndex);
+        break;
+      }
+      case 'remove':
+        Projects.selectProject(state.get('selectedProject')).deleteTodo(
+          todoIndex,
+        );
+        break;
+      default:
+        Projects.selectProject(
+          state.get('selectedProject'),
+        ).toggleTodoCompleted(todoIndex);
+    }
+
+    UI.refresh.todos();
+  },
+  false,
+);

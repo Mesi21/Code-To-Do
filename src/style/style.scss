@@ -1,7 +1,11 @@
+
 body {
   margin: 0px;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  .text-red{
+    color: red;
+  }
   #root {
     min-height: 100vh;
     background-color: blueviolet;
@@ -152,7 +156,7 @@ body {
             border-radius: 5px;
             cursor: pointer;
             user-select: none;
-            #check-todo{
+            .check-todo{
               display: flex;
               align-items: center;
               p {
@@ -169,7 +173,7 @@ body {
                 }
               }
             }
-            #btn-group{
+            .btn-group{
               display: flex;
               button{
                 width: 35px;

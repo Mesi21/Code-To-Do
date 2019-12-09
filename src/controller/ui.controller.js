@@ -40,6 +40,12 @@ const UI = (() => {
         this.navStatus();
       },
     },
+    editInit({ title, description, deadlineDate }, todoIndex) {
+      document.getElementById('todo-input').value = title;
+      document.getElementById('todo-description-input').value = description;
+      document.getElementById('todo-deadline-input').value = deadlineDate;
+      document.getElementById('add-todo-btn').name = `edit-${todoIndex}`;
+    },
   };
 })();
 export default UI;

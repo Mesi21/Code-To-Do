@@ -31,6 +31,16 @@ const Projects = (() => ({
         project.todos.push(new Todo(todo, decription, deadlineDate));
         that.refreshProjects();
       },
+      getTodo(todoIndex) {
+        return project.todos[todoIndex];
+      },
+      updateTodo([todo, description, deadlineDate], todoIndex) {
+        const currentTodo = project.todos[todoIndex];
+        project.todos[todoIndex] = {
+          ...currentTodo, todo, description, deadlineDate,
+        };
+        that.refreshProjects();
+      },
       deleteTodo(todoIndex) {
         project.todos.splice(todoIndex, 1);
         that.refreshProjects();
@@ -38,6 +48,11 @@ const Projects = (() => ({
       toggleTodoCompleted(todoIndex) {
         const currentState = project.todos[todoIndex].isCompleted;
         project.todos[todoIndex].isCompleted = !currentState;
+        that.refreshProjects();
+      },
+      toggleTodoPriority(todoIndex) {
+        const currentState = project.todos[todoIndex].isHighPriority;
+        project.todos[todoIndex].isHighPriority = !currentState;
         that.refreshProjects();
       },
       delete() {
