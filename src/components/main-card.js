@@ -21,17 +21,17 @@ const MainCard = () => `
                 .todos.map((todo, index) => todoItem(todo, index))
                 .join('')}
             </ul>
-            <div id='input-wrapper'>
-                <input type='text' placeholder='Any code to do ...' id='todo-input'/>
-                <input type='text' placeholder='Description' id='todo-description-input'/>
-                <input type='date' id='todo-deadline-input'>
+            <form id='input-wrapper'>
+                <input type='text' placeholder='Any code to do ...' id='todo-input' name='todo'/>
+                <input type='text' placeholder='Description' id='todo-description-input' name='description'/>
+                <input type='date' id='todo-deadline-input' name='date'>
                 <button id='add-todo-btn'>
                     Add to do
                 </button>
                 <button id='cancel-todo-btn'>
                     Cancel
                 </button>
-            </div>
+            </form>
     `
         : '<h1>There is no projects</h1>'
     }

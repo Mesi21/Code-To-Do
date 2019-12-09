@@ -1,5 +1,4 @@
 import MenuContent from './menu-content';
-import state from '../state';
 
 const Navbar = () => `
     <div id='menu-wrapper'>

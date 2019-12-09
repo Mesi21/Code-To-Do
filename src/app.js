@@ -16,6 +16,7 @@ const projectRemoveBtn = document.getElementById('remove-project-btn');
 const todoList = document.getElementById('todo-list');
 const projectsList = document.getElementById('project-list');
 const projectInput = document.getElementById('project-name-input');
+const todoFormElement = document.getElementById('input-wrapper');
 
 burgerBtn.addEventListener('click', event => {
   const isExpanded = 'is-menu-expanded';
@@ -50,8 +51,9 @@ projectRemoveBtn.addEventListener('click', event => {
 });
 
 todoAddBtn.addEventListener('click', event => {
+  const currentData = new FormData(todoFormElement);
   Projects.selectProject(state.get('selectedProject')).addTodo(
-    'want to buy milk',
+    [...currentData.values()],
   );
   UI.refresh.todos();
   event.preventDefault();
@@ -70,3 +72,4 @@ todoList.addEventListener('click', ({ target }) => {
     .toggleTodoCompleted(todoIndex);
   UI.refresh.todos();
 });
+
