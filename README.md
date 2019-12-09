@@ -5,7 +5,7 @@
 It is just a to do application for coders
 
 
-### :fire: [Demo](https://mesi21.github.io/Code-To-Do/) 
+### :fire: [Demo](https://code-to-do.imhtapm.now.sh) 
 
 ## Contribution guide
 
