@@ -5,7 +5,11 @@ const todoItem = (data, index) => `
         <div id='check-todo'>
             <input type='checkbox' ${data.isCompleted ? 'checked' : ''} id='checkbox-${index}'/>
             <p id='title-${index}'>${data.title} <br> ${data.description} <br>
-              <small> deadline ${formatDistanceStrict(new Date(data.deadlineDate), new Date(), { addSuffix: true })}</small></p>
+                <small 
+                    id='deadline-${index}'>
+                        deadline ${formatDistanceStrict(new Date(data.deadlineDate), new Date(), { addSuffix: true })}
+                </small>
+            </p>
         </div>
         <div id='btn-group'>
             <button class='flag-btn' id='flag-todo-btn-${index}'>
