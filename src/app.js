@@ -52,9 +52,10 @@ projectRemoveBtn.addEventListener('click', event => {
 
 todoAddBtn.addEventListener('click', event => {
   const currentData = new FormData(todoFormElement);
-  Projects.selectProject(state.get('selectedProject')).addTodo(
-    [...currentData.values()],
-  );
+  Projects.selectProject(state.get('selectedProject')).addTodo([
+    ...currentData.values(),
+  ]);
+  todoFormElement.reset();
   UI.refresh.todos();
   event.preventDefault();
 });
@@ -67,9 +68,8 @@ projectsList.addEventListener('click', ({ target }) => {
 
 todoList.addEventListener('click', ({ target }) => {
   const todoIndex = Number(target.id.split('-')[1]);
-  Projects
-    .selectProject(state.get('selectedProject'))
-    .toggleTodoCompleted(todoIndex);
+  Projects.selectProject(state.get('selectedProject')).toggleTodoCompleted(
+    todoIndex,
+  );
   UI.refresh.todos();
 });
-

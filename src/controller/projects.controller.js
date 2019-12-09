@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import state from '../state';
 import Todo from '../model/todo';
 import Project from '../model/project';
@@ -12,8 +13,11 @@ const Projects = (() => ({
   },
   firstProject() {
     this.addProject('First Project');
-    this.selectProject(0)
-      .addTodo(['First todo', 'first decription', new Date(2020, 1, 11)]);
+    this.selectProject(0).addTodo([
+      'First todo',
+      'first decription',
+      format(new Date(2020, 1, 11), 'MM/dd/yyyy'),
+    ]);
   },
   refreshProjects() {
     state.set('projects', state.current.projects);

@@ -28,9 +28,7 @@ const MainCard = () => `
                 <button id='add-todo-btn'>
                     Add to do
                 </button>
-                <button id='cancel-todo-btn'>
-                    Cancel
-                </button>
+                <input type='reset' id='cancel-todo-btn' value='Reset'>
             </form>
     `
         : '<h1>There is no projects</h1>'
