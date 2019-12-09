@@ -55,17 +55,15 @@ todoAddBtn.addEventListener('click', event => {
   const currentData = new FormData(todoFormElement);
   const [type, index] = event.target.name.split('-');
   switch (type) {
-    case 'todo':
-      Projects.selectProject(state.get('selectedProject')).addTodo([
-        ...currentData.values(),
-      ]);
-      break;
     case 'edit':
       Projects.selectProject(state.get('selectedProject')).updateTodo([
         ...currentData.values(),
       ], Number(index));
       break;
     default:
+      Projects.selectProject(state.get('selectedProject')).addTodo([
+        ...currentData.values(),
+      ]);
       break;
   }
   todoAddBtn.name = 'todo';
