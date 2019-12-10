@@ -1,0 +1,38 @@
+{
+  "name": "code-to-do",
+  "version": "1.0.0",
+  "description": "To-Do for Coders",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "live-server ./public/",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mesi21/Code-To-Do.git"
+  },
+  "author": "Mesi, Imhta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mesi21/Code-To-Do/issues"
+  },
+  "homepage": "https://github.com/Mesi21/Code-To-Do#readme",
+  "devDependencies": {
+    "css-loader": "^3.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "live-server": "^1.2.1",
+    "node-sass": "^4.12.0",
+    "sass": "^1.23.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "date-fns": "^2.8.1"
+  }
+}
