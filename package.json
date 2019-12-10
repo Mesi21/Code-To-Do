@@ -4,7 +4,7 @@
   "description": "To-Do for Coders",
   "main": "src/app.js",
   "scripts": {
-    "start": "live-server ./dist/",
+    "start": "live-server ./public/",
     "watch": "webpack --watch",
     "build": "webpack"
   },
