@@ -32,7 +32,7 @@ To webpack watch
 ## Tehnical tools:
 
 - HTML & CSS
-- Javascript
+- JavaScript
 - Webpack
 - date-fnc
 
@@ -40,6 +40,15 @@ To webpack watch
 
 - Imhta [@imhta](https://github.com/imhta)
 - Emese Molnar [@Mesi21](https://github.com/Mesi21)
+
+## Contact info
+
+Molnar Emese:
+  - [Email:](mailto:mse212002@gmail.com) - mse212002@gmail.com
+  - [Portfolio]()
+  - [LinkedIn](https://www.linkedin.com/in/emesemesimolnar/)  
+  - [Twitter](https://twitter.com/buksimesi21) 
+  - [Angel List]()
 
 ### If you like this project don't forgot to support us by giving a :star: 
 
