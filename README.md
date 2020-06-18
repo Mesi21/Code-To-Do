@@ -48,7 +48,7 @@ Molnar Emese:
   - [Portfolio]()
   - [LinkedIn](https://www.linkedin.com/in/emesemesimolnar/)  
   - [Twitter](https://twitter.com/buksimesi21) 
-  - [Angel List]()
+  - [AngelList]()
 
 ### If you like this project don't forgot to support us by giving a :star: 
 
