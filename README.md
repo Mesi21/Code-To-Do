@@ -4,6 +4,9 @@
 
 It is just a to do application for coders
 
+## Screenshot
+
+![screenshot](src/style/Todo.png)
 
 ### :fire: [Demo](https://code-to-do.imhtapm.now.sh) 
 
